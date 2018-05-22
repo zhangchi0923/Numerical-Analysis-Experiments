@@ -1,0 +1,16 @@
+clc
+clear
+m = 10;
+k = 0:m;
+x = -1+k*2/m;
+y = 1./(1+25*x.^2);
+u = linspace(-1,1,100);
+p = my_polyfit(x,y,3);
+v = (1./(1+25*u.^2));
+plot(u,v,'b-.*')
+hold on
+plot(u,polyval(p,u),'r-.*')
+title('Graphs of approximated func & approximating func with m=30 and n=5');
+legend('Approximated Func','Approximating Func',1)
+
+
